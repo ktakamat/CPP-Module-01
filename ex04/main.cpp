@@ -4,7 +4,7 @@
 int	main(int argc, char **argv)
 {
 	std::ifstream ifs;
-	std::ofstream ofs;
+	std::ofstream ofs; 
 	std::string outfile;
 	std::string contents;
 	std::string s1;
@@ -32,6 +32,14 @@ int	main(int argc, char **argv)
 		std::cout << "sorry, can't open " << argv[1] << std::endl;
 		return (1);
 	}
+	outfile = argv[1];
+	outfile.append(".replace");
+	ofs.open(outfile);
+	if (ofs.fail())
+	{
+		std::cout << "sorry, can't open " << outfile << std::endl;
+		return (1);
+	}
 	while (true)
 	{
 		std::getline(ifs, contents);
@@ -39,7 +47,7 @@ int	main(int argc, char **argv)
 		while (true)
 		{
 			pos = contents.find(s1, pos);
-			if (pos == std::string::npos);
+			if (pos == std::string::npos)
 			{
 				break ;
 			}
