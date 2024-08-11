@@ -16,10 +16,3 @@ int main (void)
 	check.complain("asrtyukgfds");
 	return (0);
 }
-
-
-__attribute__((destructor))
-static void destructor() 
-{
-    system("leaks -q ex05");
-}

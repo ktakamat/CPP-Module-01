@@ -27,7 +27,7 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 	ifs.open(argv[1]);
-	if (ifs.fail() | ifs.bad())
+	if (ifs.fail() || ifs.bad())
 	{
 		std::cout << "sorry, can't open " << argv[1] << std::endl;
 		return (1);
